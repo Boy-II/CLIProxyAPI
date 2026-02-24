@@ -1,0 +1,32 @@
+{
+  "$schema": "https://schema.zeabur.app/zeabur.json",
+  "build": {
+    "type": "dockerfile"
+  },
+  "ports": [8317],
+  "env": {
+    "MANAGEMENT_PASSWORD": {
+      "default": "",
+      "expose": true,
+      "description": "Management Web UI password"
+    },
+    "TZ": {
+      "default": "Asia/Taipei",
+      "expose": true,
+      "description": "Timezone"
+    }
+  },
+  "configs": [
+    "/CLIProxyAPI/config.yaml"
+  ],
+  "volumes": [
+    {
+      "id": "auth-data",
+      "dir": "/root/.cli-proxy-api"
+    },
+    {
+      "id": "logs",
+      "dir": "/CLIProxyAPI/logs"
+    }
+  ]
+}
