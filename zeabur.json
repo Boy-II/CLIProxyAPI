@@ -17,7 +17,7 @@
     }
   },
   "configs": [
-    "/CLIProxyAPI/config.yaml"
+    "/config/config.yaml"
   ],
   "volumes": [
     {
